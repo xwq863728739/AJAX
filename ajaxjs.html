@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='ajax.js'></script>
+</head>
+<body>
+	<input type="button" value='提交' id="btn1" />
+</body>
+<script>
+	var btn=document.getElementById('btn1');
+	btn1.onclick=function(){
+		ajax('test1.json',function(str){
+			alert(str)
+		},function(status){
+			alert(status)
+		})
+		
+	}
+</script>
+</html>

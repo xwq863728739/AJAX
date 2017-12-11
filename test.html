@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+	</script>
+</head>
+<body>
+	<input type="button" value="提交" id="sub" />
+</body>
+<script>
+$(function(){
+    $('#sub').click(function(){
+         $.ajax({
+             type: "GET",
+             url: "test.txt?t="+new Date().getTime(),//去除浏览器缓存影响，与修改同步更新
+             // data: {username:$("#username").val(), content:$("#content").val()},
+             // dataType: "json",
+             success: function(data){
+                       alert(data) 
+             },
+             error: function(data){
+             	alert('fail')
+             }
+
+                         
+           })
+         });
+    });
+</script>
+</html>
